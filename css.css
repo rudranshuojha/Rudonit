@@ -1,6 +1,4 @@
-/* Rudyverse Style – clean & minimal, now with Zuckonit fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap');
-
+/* Rudyverse Style – clean & minimal */
 body {
   margin: 0;
   padding: 0;
@@ -23,7 +21,6 @@ h1 {
   text-align: center;
   font-size: 2.8rem;
   letter-spacing: 1px;
-  font-family: 'IBM Plex Mono', monospace;
 }
 
 /* Tagline or subtitle */
@@ -40,13 +37,11 @@ h2 {
   color: #61dafb; /* bright cyan tone */
   margin-top: 40px;
   font-size: 1.6rem;
-  font-family: 'IBM Plex Mono', monospace;
 }
 
 /* Paragraphs */
 p {
   color: #d1d5db;
-  font-family: 'Poppins', sans-serif;
 }
 
 /* Footer */
@@ -57,7 +52,6 @@ footer {
   margin-top: 60px;
   padding: 20px 0;
   border-top: 1px;
-  font-family: 'Poppins', sans-serif;
 }
 
 /* Header bar */
@@ -78,7 +72,6 @@ header h1 {
   margin: 0;
   font-size: 2rem;
   letter-spacing: 1px;
-  font-family: 'IBM Plex Mono', monospace;
 }
 
 img {
@@ -100,7 +93,6 @@ img {
   color: #4aa3f0;
   text-align: center;
   margin-bottom: 20px;
-  font-family: 'IBM Plex Mono', monospace;
 }
 
 /* Individual posts */
@@ -124,7 +116,6 @@ img {
   color: #007bff;
   text-decoration: none;
   font-weight: 500;
-  font-family: 'IBM Plex Mono', monospace;
 }
 
 .post a:hover {
