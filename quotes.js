@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function () {
   const quotes = [
     "Building thoughts into reality.",
     "Code that speaks louder than words.",
@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const quoteBox = document.getElementById("founder-quote");
   if (quoteBox) {
-    quoteBox.innerText = quotes[Math.floor(Math.random() * quotes.length)];
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    quoteBox.textContent = quotes[randomIndex];
+  } else {
+    console.error("Founder quote element not found!");
   }
-});
+};
