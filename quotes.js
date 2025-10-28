@@ -1,23 +1,14 @@
 const founderQuotes = [
-  "Every great thing starts with late nights and wild ideas",
-  "Innovation is born from obsession",
-  "Code your vision into reality",
-  "Minimal design, maximum purpose",
-  "The only constant in the tech industry is change",
-  "Your job is to build your replacements",
-  "Tech is the useful servant but dangerous master",
-  "AI is just a tool, not a need",
-  "Simplicity is the ultimate sophistication",
-  "A fool with a tool is still a fool",
+  "Keep building. Even when no one’s watching.",
+  "Vision means seeing it before others do.",
+  "Consistency beats intensity.",
+  "Create what you wish existed.",
+  "Work quietly. Let your results speak."
 ];
 
 function showFounderMessage() {
-    const randomQuote = 
-founderQuotes[Math.floor(Maths.random()*founderQuotes.length)]
-
-document.getElementById("founder-message").textContent = '"${randomQuote}"';
+  const randomQuote = founderQuotes[Math.floor(Math.random() * founderQuotes.length)];
+  document.getElementById("founder-message").textContent = `"${randomQuote}"`;
 }
 
-
 window.onload = showFounderMessage;
-
