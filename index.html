@@ -17,6 +17,16 @@
   html { scroll-behavior: smooth; }
 </style>
   <h1>Welcome to Rudonit</h1>
+<script>
+  const greet = document.createElement("p");
+  const hour = new Date().getHours();
+  if (hour < 12) greet.innerText = "Good morning ☀️";
+  else if (hour < 18) greet.innerText = "Good afternoon 🌤️";
+  else greet.innerText = "Good evening 🌙";
+  greet.style.textAlign = "center";
+  greet.style.color = "#4aa3f0";
+  document.body.prepend(greet);
+</script>
   <hr>
 <p id="clock" style="text-align:center; color:#4aa3f0; font-weight:bold;"></p>
 <script>
