@@ -94,6 +94,13 @@ setInterval(() => {
   <div class="container">
     <p class="tagline">thoughts. code. creation.</p>
     <hr>
+<p id="visitorCount" style="text-align:center;"></p>
+<script>
+  let count = localStorage.getItem("visits") || 0;
+  count++;
+  localStorage.setItem("visits", count);
+  document.getElementById("visitorCount").innerText = `You’ve visited Rudonit ${count} times.`;
+</script>
     <footer>© 2025 Rudyverse</footer>
   </div>
   <script src="quotes.js"></script>
