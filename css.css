@@ -121,3 +121,13 @@ img {
 .post a:hover {
   text-decoration: underline;
 }
+
+.founder-quote {
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+  color: #444;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
