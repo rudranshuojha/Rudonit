@@ -18,6 +18,12 @@
 </style>
   <h1>Welcome to Rudonit</h1>
   <hr>
+<p id="clock" style="text-align:center; color:#4aa3f0; font-weight:bold;"></p>
+<script>
+setInterval(() => {
+  document.getElementById("clock").innerText = new Date().toLocaleTimeString();
+}, 1000);
+</script>
 <!-- 🔹 NAVIGATION BAR -->
 <nav style="
   background-color: #0d6efd;
