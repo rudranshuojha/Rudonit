@@ -42,7 +42,7 @@ h2 {
 
 /* Paragraphs */
 p {
-  color: #00008B;
+  color: #FFF;
 }
 
 /* Footer */
@@ -96,7 +96,7 @@ img {
 /* Individual posts */
 .post {
   background-color: #f9f9f9; /* white box inside */
-  color: #111;
+  color: #00008B;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
@@ -128,4 +128,5 @@ img {
   font-size: 1rem;
   opacity: 0.85;
 }
+
 
