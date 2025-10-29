@@ -131,3 +131,38 @@ img {
   opacity: 0.85;
 }
 
+/* Default light theme */
+body.light-mode {
+  background-color: #ffffff;
+  color: #0b63ce; /* blue text */
+  transition: background 0.5s, color 0.5s;
+}
+
+body.light-mode a {
+  color: #0b63ce;
+}
+
+/* Blog block styling in light mode */
+body.light-mode .blog-block {
+  background-color: #f9f9f9;
+  color: #0b63ce;
+}
+
+/* Dark theme */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+  transition: background 0.5s, color 0.5s;
+}
+
+body.dark-mode a {
+  color: #4da3ff;
+}
+
+/* Blog block styling in dark mode */
+body.dark-mode .blog-block {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+
