@@ -165,4 +165,53 @@ body.dark-mode .blog-block {
   color: #ffffff;
 }
 
+/* Default Theme (fallback) */
+body {
+  background-color: white;
+  color: #000;
+  transition: 0.3s ease;
+}
 
+/* Gryffindor */
+body.gryffindor {
+  background-color: #1a0000;
+  color: #fff;
+}
+
+body.gryffindor .navbar {
+  background-color: #7F0909;
+  color: #FFC500;
+}
+
+/* Slytherin */
+body.slytherin {
+  background-color: #001a0f;
+  color: #fff;
+}
+
+body.slytherin .navbar {
+  background-color: #1A472A;
+  color: #AAAAAA;
+}
+
+/* Ravenclaw */
+body.ravenclaw {
+  background-color: #000814;
+  color: #fff;
+}
+
+body.ravenclaw .navbar {
+  background-color: #0E1A40;
+  color: #946B2D;
+}
+
+/* Hufflepuff */
+body.hufflepuff {
+  background-color: #fff8d1;
+  color: #000;
+}
+
+body.hufflepuff .navbar {
+  background-color: #FFDB00;
+  color: #60605C;
+}
