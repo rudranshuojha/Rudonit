@@ -96,6 +96,7 @@
           const postEl = document.createElement("div");
           postEl.classList.add("post");
           postEl.innerHTML = `
+            <div class="username">${post.username}</div>
             <div class="title">${post.title}</div>
             <div class="content">${post.content}</div>
             <div class="time">${new Date(post.timestamp).toLocaleString()}</div>
