@@ -83,10 +83,10 @@
 
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
-    const username = document.getElementById("username").value;
     
     document.getElementById("postForm").addEventListener("submit", async (e) => {
       e.preventDefault();
+      const username = document.getElementById("username").value;
       const title = document.getElementById("title").value.trim();
       const content = document.getElementById("content").value.trim();
 
