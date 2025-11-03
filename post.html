@@ -98,6 +98,7 @@
         const postRef = ref(db, "posts");
         const newPost = push(postRef);
         await set(newPost, {
+          username,
           title,
           content,
           timestamp: new Date().toISOString(),
