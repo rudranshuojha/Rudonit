@@ -85,32 +85,34 @@
     const db = getDatabase(app);
     
     document.getElementById("postForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const username = document.getElementById("username").value;
-      const title = document.getElementById("title").value.trim();
-      const content = document.getElementById("content").value.trim();
+  e.preventDefault();
 
-      if (!username || !title || !content) {
-        alert("Please fill out all fields.");
-        return;
-      }
+  const username = document.getElementById("username").value;  // ✅ must be exactly this
+  const title = document.getElementById("title").value;
+  const content = document.getElementById("content").value;
 
-      try {
-        const postRef = ref(db, "posts");
-        const newPost = push(postRef);
-        await set(newPost, {
-          username,
-          title,
-          content,
-          timestamp: new Date().toISOString(),
-        });
-        alert("✅ Post added successfully!");
-        document.getElementById("postForm").reset();
-      } catch (error) {
-        console.error("Error adding post:", error);
-        alert("❌ Something went wrong!");
-      }
-    });
+  if (!username || !title || !content) {
+    alert("Please fill out all fields!");
+    return;
+  }
+
+  const post = {
+    username,  // ✅ this line must exist
+    title,
+    content,
+    timestamp: new Date().toISOString()
+  };
+
+  try {
+    const postsRef = ref(db, "posts");
+    await push(postsRef, post);
+    alert("✅ Post added successfully!");
+    document.getElementById("postForm").reset();
+  } catch (error) {
+    console.error("❌ Error adding post:", error);
+  }
+});
+          
   </script>
 </body>
 </html>
