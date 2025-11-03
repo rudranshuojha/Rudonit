@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create a Post | Rudonit Forum</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #0d1117;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #58a6ff;
+    }
+
+    form {
+      background: #161b22;
+      padding: 25px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      box-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
+    }
+
+    input, textarea {
+      background: #0d1117;
+      color: #fff;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 15px;
+      resize: none;
+    }
+
+    button {
+      background: #238636;
+      color: #fff;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #2ea043;
+    }
+  </style>
+</head>
+<body>
+  <h1>🖊 Create a Post</h1>
+
+  <form id="postForm">
+    <input type="text" id="title" placeholder="Enter title..." required />
+    <textarea id="content" rows="6" placeholder="Write your post..." required></textarea>
+    <button type="submit">Post</button>
+  </form>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+    import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDS-K-H3DxCrKmkh6tXrzpdONfO9YAIhpo",
+      authDomain: "rudonit-forum.firebaseapp.com",
+      databaseURL: "https://rudonit-forum-default-rtdb.firebaseio.com/",
+      projectId: "rudonit-forum",
+      storageBucket: "rudonit-forum.firebasestorage.app",
+      messagingSenderId: "931903137391",
+      appId: "1:931903137391:web:d8fc3c82bdb0bda83f8f9a"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    document.getElementById("postForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const title = document.getElementById("title").value.trim();
+      const content = document.getElementById("content").value.trim();
+
+      if (!title || !content) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      try {
+        const postRef = ref(db, "posts");
+        const newPost = push(postRef);
+        await set(newPost, {
+          title,
+          content,
+          timestamp: new Date().toISOString(),
+        });
+        alert("✅ Post added successfully!");
+        document.getElementById("postForm").reset();
+      } catch (error) {
+        console.error("Error adding post:", error);
+        alert("❌ Something went wrong!");
+      }
+    });
+  </script>
+</body>
+</html>
